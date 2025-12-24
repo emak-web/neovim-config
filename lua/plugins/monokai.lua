@@ -3,7 +3,7 @@ return {
     config = function()
         require("monokai-pro").setup({
             transparent_background = true,
-            terminal_colors = true,
+            terminal_colors = false,
             devicons = false, -- highlight the icons of `nvim-web-devicons`
             styles = {
                 comment = { italic = false },

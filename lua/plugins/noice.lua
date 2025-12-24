@@ -2,7 +2,7 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
-        -- add any options here
+            background_colour = "#000000",
     },
     dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -14,6 +14,7 @@ return {
     },
     config = function()
         require("noice").setup({
+            background_colour = "#000000",
             lsp = {
                 -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
                 override = {
@@ -55,9 +56,9 @@ return {
                 -- NOTE: If you enable messages, then the cmdline is enabled automatically.
                 -- This is a current Neovim limitation.
                 enabled = true, -- enables the Noice messages UI
-                view = "notify", -- default view for messages
-                view_error = "notify", -- view for errors
-                view_warn = "notify", -- view for warnings
+                view = "mini", -- default view for messages
+                view_error = "mini", -- view for errors
+                view_warn = "mini", -- view for warnings
                 view_history = "messages", -- view for :messages
                 view_search = false, -- view for search count messages. Set to `false` to disable
             },
@@ -162,7 +163,7 @@ return {
                 signature = {
                     enabled = true,
                     auto_open = {
-                        enabled = true,
+                        enabled = false,
                         trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
                         luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
                         throttle = 50, -- Debounce lsp signature help request by 50ms
@@ -221,7 +222,15 @@ return {
             ---@type NoiceConfigViews
             views = {}, ---@see section on views
             ---@type NoiceRouteConfig[]
-            routes = {}, --- @see section on routes
+            routes = { -- REMOVES USELESS MESSAGES 
+                {
+                    filter = {
+                        event = "msg_show",
+                        find = "lines",
+                    },
+                    opts = { skip = true },
+                },
+            }, --- @see section on routes
             ---@type table<string, NoiceFilter>
             status = {}, --- @see section on statusline components
             ---@type NoiceFormatOptions
