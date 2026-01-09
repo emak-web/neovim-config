@@ -8,8 +8,8 @@ return {
             local cmp = require('cmp')
             cmp.setup({
                 mapping = {
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.abort(),
+                    ['<C-n>'] = cmp.mapping.complete(),
+                    ['<C-p>'] = cmp.mapping.abort(),
                     ['<Tab>'] = cmp.mapping.confirm({ select = true }),
                     ['<Down>'] = cmp.mapping.select_next_item(),
                     ['<Up>'] = cmp.mapping.select_prev_item(),
@@ -18,10 +18,15 @@ return {
                     { name = 'nvim_lsp' },
                 },
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    -- completion = cmp.config.window.bordered(),
+                    -- documentation = cmp.config.window.bordered(),
+                    border = "rounded",
                 },
+                completion = {
+                    border = "rounded",
+                }
             })
         end,
     },
 }
+

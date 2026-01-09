@@ -766,7 +766,7 @@ return {
                 toggle = true,
             })
         end, {})
-        vim.keymap.set('n', '<leader>d', function()
+        vim.keymap.set('n', '<leader>v', function()
             require('neo-tree.command').execute({
                 action = "focus",          -- OPTIONAL, this is the default value
                 source = "filesystem",     -- OPTIONAL, this is the default value

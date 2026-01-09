@@ -24,7 +24,7 @@ return {
             },
             inc_search = "background", -- underline | background
             background_clear = {
-                -- "float_win",
+                "float_win",
                 "toggleterm",
                 "telescope",
                 -- "which-key",
@@ -32,7 +32,7 @@ return {
                 "notify",
                 -- "nvim-tree",
                 "neo-tree",
-                -- "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
+                "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
             },-- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
             plugins = {
                 bufferline = {
@@ -50,7 +50,36 @@ return {
             ---@param p ColorschemeOptions
             ---@param Config MonokaiProOptions
             ---@param hp Helper
-            override = function(cs, p, Config, hp) end
+            override = function(cs, p, Config, hp) end,
+
+            -- --- @param filter "classic" 
+
+            -- overridePalette = function(filter)
+            --     return {
+            --         -- Backgrounds
+            --         dark2       = "#161613",
+            --         dark1       = "#1d1e19",
+            --         background  = "#1f1f1f",
+            --
+            --         -- KEEP from your original
+            --         text        = "#fdfff1",
+            --
+            --         -- Accents (re-wired to match what your theme actually does)
+            --         accent1     = "#c57a4a", -- keywords + operators/symbols -> ORANGE (was pink)
+            --         accent2     = "#aeb66b", -- strings -> GREEN (was orange)
+            --         accent3     = "#c57a4a", -- extra structural accent -> ORANGE (safe fallback)
+            --         accent4     = "#7fa9c6", -- functions -> BLUE (was green)
+            --         accent5     = "#c57a4a", -- types -> ORANGE (was blue)
+            --         accent6     = "#cf90aa", -- numbers -> PINK (use for literals/consts if theme does)
+            --
+            --         -- KEEP dimmed set (comments + UI greys)
+            --         dimmed1     = "#c0c1b5",
+            --         dimmed2     = "#919288",
+            --         dimmed3     = "#6e7066",
+            --         dimmed4     = "#57584f",
+            --         dimmed5     = "#3b3c35",
+            --     }
+            -- end
         })
 
         vim.cmd("colorscheme monokai-pro")
