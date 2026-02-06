@@ -42,8 +42,8 @@ return {
             vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { desc = "Go to type definition" })
 
             -- Diagnostics navigation
-            vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-            vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+            vim.keymap.set('n', '<leader>nn', vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
+            vim.keymap.set('n', '<leader>np', vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 
             -- Show all diagnostics in a quickfix list
             vim.keymap.set('n', '<leader>.', vim.diagnostic.setqflist, { desc = "Diagnostics to quickfix" })

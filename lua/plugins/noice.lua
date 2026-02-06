@@ -130,8 +130,8 @@ return {
                 -- event is always "notify" and kind can be any log level as a string
                 -- The default routes will forward notifications to nvim-notify
                 -- Benefit of using Noice for this is the routing and consistent history view
-                enabled = false,
-                view = "notify",
+                enabled = true,
+                view = "mini",
             },
             lsp = {
                 progress = {
@@ -175,7 +175,7 @@ return {
                 message = {
                     -- Messages shown by lsp servers
                     enabled = true,
-                    view = "notify",
+                    view = "mini",
                     opts = {},
                 },
                 -- defaults for hover and signature help

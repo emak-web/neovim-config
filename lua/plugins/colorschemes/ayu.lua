@@ -2,7 +2,7 @@ return {
     "Shatur/neovim-ayu",
     config = function()
         require("ayu").setup({
-            mirage = true,
+            mirage = false,
             terminal = false,
             overrides = {
                 Normal = { bg = "None" },

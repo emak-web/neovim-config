@@ -42,3 +42,4 @@ vim.keymap.set("n", "H", ":bp<CR>", opts)
 vim.keymap.set("n", "L", ":bn<CR>", opts)
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", opts)
 
+vim.keymap.set("n", "Q", "qq", opts)
